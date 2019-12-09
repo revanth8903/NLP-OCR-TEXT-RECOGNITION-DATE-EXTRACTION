@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]: 
 import cv2
 import wand
 import pytesseract
@@ -9,9 +8,6 @@ import pandas as pd
 from skimage.io import imread, imshow
 import matplotlib.pyplot as plt
 import re
-
-
-# In[3]:
 
 
 import glob
@@ -32,15 +28,6 @@ for img in glob.glob("D:\Revanth\Receipts/*.jpeg"):
     new.append(image_to_text)
 
 
-# In[4]:
-
-
-new
-
-
-# In[5]:
-
-
 new1=[]
 new2=[]
 for i in new:
@@ -51,37 +38,11 @@ for j in new1:
     new2.append(match)
 
 
-# In[6]:
-
-
-new1
-
-
-# In[7]:
-
-
-for j in new1:
-    match = re.search('(\d+/\d+/\d+)',j)
-    new2.append(match)   
-
-
-# In[8]:
-
-
-new2
-
-
-# In[9]:
-
-
 for g in new2:
     if g==None:
         print('no')
     else:
         print(g.group())
-
-
-# In[10]:
 
 
 count1=-1
@@ -95,29 +56,15 @@ for g in new2:
         print('Yes')
 
 
-# In[11]:
-
-
 a1=count1/2
 a1
-
-
-# In[12]:
-
 
 a2=count2/2
 a2
 
 
-# In[13]:
-
-
 total=a1+a2
 total
-
-
-# In[17]:
-
 
 accuracy=a2/total*100
 accuracy
